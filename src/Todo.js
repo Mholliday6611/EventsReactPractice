@@ -42,6 +42,7 @@ class Todo extends React.Component{
 // Docs-----
 // https://facebook.github.io/react/docs/react-component.html#componentwillreceiveprops
 componentWillReceiveProps(nextProps){
+  console.log('d')
   if(nextProps !== this.props){
     this.setState({
       complete: false
@@ -65,7 +66,22 @@ handleUpdateClick(e){
     })
   }
 
-
+shouldComponentUpdate(nextProps, nextState){
+  console.log('a')
+  return true
+}
+componentWillUpdate(nextProps, nextStatet){
+  console.log('b')
+}
+componentDidUpdate(prevProps, prevState){
+  console.log('c')
+}
+componentWillMount(){
+  console.log('e')
+}
+componentDidMount(){
+  console.log('f')
+}
 
 render(){
   return(
